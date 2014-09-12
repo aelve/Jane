@@ -1,0 +1,55 @@
+name:                Jane
+version:             0.1.0.0
+synopsis:            hierarchical note-taking software
+description:
+  Jane is a hierarchical note-taking (and knowledge-storing in general)
+  program equipped with GUI (don't worry, it is controlled with a command
+  language made specifically for the task – mouse is not needed and actually
+  is quite useless).
+license:             MIT
+license-file:        LICENSE
+author:              Aelve
+maintainer:          yom@artyom.me
+copyright:           Aelve, 2014
+category:            Aelve, Desktop, Tools, Utils
+build-type:          Simple
+-- extra-source-files:  
+cabal-version:       >=1.10
+tested-with:
+  GHC==7.8.2
+
+data-dir: .
+data-files:
+  main.glade
+
+executable Jane
+  main-is:           Main.hs
+  default-extensions: 
+    MultiWayIf, ScopedTypeVariables, UnicodeSyntax,
+    NoMonomorphismRestriction,
+    Rank2Types, FlexibleInstances, FlexibleContexts, MultiParamTypeClasses,
+    NoImplicitPrelude, OverloadedStrings
+  other-extensions:
+    TemplateHaskell,
+    RankNTypes, TypeSynonymInstances
+  build-depends:
+    base >=4.7 && <5,
+    containers >=0.5 && <0.6,
+    directory >=1.2,
+    stm,
+    classy-prelude ==0.9.*,
+    template-haskell,
+    lens, text, random, aeson, bifunctors, parsec ==3.*,
+    monad-loops, uuid, system-fileio, bert, random-shuffle >=0.0.4,
+    mtl ==2.2.*, transformers-base, transformers,
+    time,
+    gtk3, webkitgtk3,
+--https://github.com/feuerbach/monad-classes
+    monad-classes ==0.1,
+    profunctors,
+    monad-control, lifted-base,
+    stm-containers
+  hs-source-dirs:    .
+  default-language:  Haskell2010
+  ghc-options: 
+    -threaded

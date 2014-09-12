@@ -1,0 +1,11 @@
+*~
+dist/*
+README.*
+INSTALL.*
+.configure-stamp
+.cabal-sandbox
+cabal.sandbox.config
+*.diff
+*.o
+*.hi
+*.pyc
